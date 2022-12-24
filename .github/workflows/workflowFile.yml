@@ -3,7 +3,8 @@ name: Run Python script
 on:
   schedule:
     # Run the script at 05:30 (5:30 am) UTC every day
-    - cron: '30 5 * * *'
+    - cron: '29 18 * * *'
+
 
 jobs:
   build:
