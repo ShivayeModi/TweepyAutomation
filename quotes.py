@@ -1,0 +1,21 @@
+quotes = [
+"Keep up the great work! Every day is a chance to get better and closer to your goals. Keep pushing forward and don't give up.",
+"Way to go! The journey to success is filled with challenges and setbacks, but it's worth it in the end. Keep going.",
+"Keep up the amazing work! The only way to achieve your dreams is to take action and keep working towards them. Don't let anything stand in your way.",
+"Well done! Success is the result of consistent effort and hard work. Keep putting in the time and you'll see progress.",
+"Great job! Every day is an opportunity to learn and grow. Embrace the challenge and keep improving your skills.",
+"Way to go! Don't let fear or doubt hold you back. Believe in yourself and your abilities. You can do anything you set your mind to.",
+"Well done! Success is not a destination, it's a journey. Keep taking small steps towards your goals and you'll get there eventually.",
+"Keep up the good work! The only way to succeed is to keep trying and never give up. Don't let setbacks discourage you, keep pushing through.",
+"Awesome work! Every challenge is an opportunity to learn and grow. Embrace the struggle and use it to become stronger and more resilient.",
+"Great job! The road to success is not always easy, but it's worth it in the end. Keep working hard and you'll achieve your goals.",
+"Well done! Don't let other people's opinions or expectations hold you back. Believe in yourself and your dreams, and follow your own path.",
+"Keep up the fantastic work! Success is not about being the best, it's about being the best version of yourself. Keep working on improving yourself and your skills.",
+"Awesome work! Every day is an opportunity to make progress and get closer to your goals. Keep working hard and don't give up.",
+"Well done! The key to success is consistency and persistence. Keep putting in the effort, even when it's tough, and you'll eventually see progress.",
+"Great job! Don't let setbacks or failures discourage you. Use them as opportunities to learn and grow, and keep moving forward towards your goals.",
+"Keep up the amazing work! Success is not about achieving perfection, it's about making progress and continuously improving. Don't be afraid to make mistakes and learn from them.",
+"Way to go! The only way to achieve your goals is to take action and make them a priority. Don't let fear or procrastination hold you back, keep moving forward.",
+"Well done! Success is not a one-time event, it's a continuous journey. Keep working hard and learning, and you'll achieve your goals eventually.",
+"Keep up the awesome work! The journey to success is not always easy, but it's worth it in the end. Keep working hard and don't give up, and you'll get there eventually."
+]
