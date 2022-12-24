@@ -1,4 +1,6 @@
 /Twitter API Keys.txt
 /quotes.txt
-/twitterbot_tweet_now
-/twitterbot_retweet
+/twitterbot_tweet_now.py
+/twitterbot_retweet.py
+/config.py
+
