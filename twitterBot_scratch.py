@@ -54,3 +54,9 @@ def performQueryAndReply(old_id=None):
 performQueryAndReply()
 
 
+# Check if script has run successfully
+if performQueryAndReply():
+    # Exit script if script has run successfully
+    exit()
+
+
