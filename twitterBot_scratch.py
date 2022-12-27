@@ -40,7 +40,7 @@ def performQueryAndReply(old_id=None):
              api.update_status(my_reply, in_reply_to_status_id=tweet.id, auto_populate_reply_metadata=True)
              print("Replied to tweet=", my_reply)
              # time.sleep(86400)
-             break
+             exit()
          else:
              continue
 
@@ -54,9 +54,9 @@ def performQueryAndReply(old_id=None):
 performQueryAndReply()
 
 
-# Check if script has run successfully
-if performQueryAndReply():
-    # Exit script if script has run successfully
-    exit()
+# # Check if script has run successfully
+# if performQueryAndReply():
+#     # Exit script if script has run successfully
+#     exit()
 
 
