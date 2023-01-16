@@ -1,6 +1,8 @@
 import time
 import random
 import tweepy
+import requests
+import json
 from datetime import datetime
 from credentials import *
 import quotes
@@ -18,6 +20,15 @@ old_id = None
 # checkForCorrectTime()
 def performQueryAndReply(old_id=None):
 
+ # make GET request for joke
+ json_response = requests.get("https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit")
+ json_object_text = json_response.text
+ joke_dict = json.loads(json_object_text)
+ joke_org_text = ""
+ if joke_dict["type"] == "single":
+     joke_org_text = joke_dict["joke"]
+ else:
+     joke_org_text = joke_dict["setup"] + "\n\n" + joke_dict["delivery"]
  auth = tweepy.OAuth1UserHandler(consumer_key, consumer_secret, access_token, access_token_secret)
  api = tweepy.API(auth)
  query_string = "of 100DaysOfCode -filter:retweets"
@@ -36,10 +47,14 @@ def performQueryAndReply(old_id=None):
              # select a random quote
              my_reply = random.choice(quotes.quotes)
 
+             # tweet the joke
+             api.update_status(joke_org_text)
+
+             time.sleep(15)
+
              # reply to tweet
              api.update_status(my_reply, in_reply_to_status_id=tweet.id, auto_populate_reply_metadata=True)
              print("Replied to tweet=", my_reply)
-             # time.sleep(86400)
              exit()
          else:
              continue
