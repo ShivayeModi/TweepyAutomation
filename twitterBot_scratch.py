@@ -4,8 +4,11 @@ import tweepy
 import requests
 import json
 from datetime import datetime
+from io import BytesIO
+from PIL import Image
 from credentials import *
 import quotes
+
 
 
 old_id = None
@@ -18,6 +21,29 @@ old_id = None
 #         checkForCorrectTime()
 #
 # checkForCorrectTime()
+
+auth = tweepy.OAuth1UserHandler(consumer_key, consumer_secret, access_token, access_token_secret)
+api = tweepy.API(auth)
+
+def postMeme():
+   try :
+    rand_num = random.randint(50 , 1500 )
+    urlstring = "https://tg.i-c-a.su/media/programmerjokes/" + str(rand_num)
+    json_response = requests.get(urlstring)
+    meme_img_pil = Image.open(BytesIO(json_response.content))
+
+    # Save image in memory
+    meme_img_bytes = BytesIO()
+    meme_img_pil.save(meme_img_bytes, format='JPEG')
+    meme_img_bytes.seek(0)
+
+    media = api.media_upload(filename="meme of the day",file=meme_img_bytes)
+
+    api.update_status("daily tech #meme",media_ids=[media.media_id_string])
+
+   except :
+       print("Some error has occured")
+
 def performQueryAndReply(old_id=None):
 
  # make GET request for joke
@@ -29,8 +55,7 @@ def performQueryAndReply(old_id=None):
      joke_org_text = joke_dict["joke"]
  else:
      joke_org_text = joke_dict["setup"] + "\n\n" + joke_dict["delivery"]
- auth = tweepy.OAuth1UserHandler(consumer_key, consumer_secret, access_token, access_token_secret)
- api = tweepy.API(auth)
+
  query_string = "of 100DaysOfCode -filter:retweets"
  for tweet in tweepy.Cursor(api.search_tweets,query_string).items():
      try:
@@ -66,8 +91,11 @@ def performQueryAndReply(old_id=None):
      # performQueryAndReply()
 
 
-performQueryAndReply()
 
+
+
+postMeme()
+performQueryAndReply()
 
 # # Check if script has run successfully
 # if performQueryAndReply():
