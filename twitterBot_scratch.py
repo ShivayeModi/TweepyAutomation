@@ -39,7 +39,7 @@ def postMeme():
 
     media = api.media_upload(filename="meme of the day",file=meme_img_bytes)
 
-    api.update_status("daily tech #meme",media_ids=[media.media_id_string])
+    api.update_status("",media_ids=[media.media_id_string])
 
    except :
        print("Some error has occured")
@@ -95,7 +95,7 @@ def performQueryAndReply(old_id=None):
 
 
 postMeme()
-performQueryAndReply()
+#performQueryAndReply()
 
 # # Check if script has run successfully
 # if performQueryAndReply():
