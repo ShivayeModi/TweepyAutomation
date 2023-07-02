@@ -26,7 +26,6 @@ client = tweepy.Client(bearer_token,consumer_key,consumer_secret,access_token,ac
 auth = tweepy.OAuth1UserHandler(consumer_key,consumer_secret,access_token,access_token_secret)
 api = tweepy.API(auth)
 
-print(api)
 def postMeme():
   try:
     rand_num = random.randint(50 , 1500 )
@@ -40,8 +39,8 @@ def postMeme():
     meme_img_bytes.seek(0)
 
     media = api.media_upload(filename="meme of the day",file=meme_img_bytes)
-
-    client.create_tweet(media_ids=[media.media_id_string])
+    text = "#100DaysOfCode #programming #softwaredeveloper #techworld #dailymemes #coding #memer #techhumor #programmermemes"
+    client.create_tweet(text=text,media_ids=[media.media_id_string])
     # api.update_status("\*/",media_ids=[media.media_id_string])
   except Exception as e:
       print(e)
