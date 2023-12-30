@@ -39,7 +39,7 @@ def postMeme():
     meme_img_bytes.seek(0)
 
     media = api.media_upload(filename="meme of the day",file=meme_img_bytes)
-    text = "#100DaysOfCode #programming #softwaredeveloper #techworld #dailymemes #coding #memer #techhumor #programmermemes"
+    text = "#programming #techworld #dailymemes #coding #memer #techhumor #programmermemes"
     client.create_tweet(text=text,media_ids=[media.media_id_string])
     # api.update_status("\*/",media_ids=[media.media_id_string])
   except Exception as e:
