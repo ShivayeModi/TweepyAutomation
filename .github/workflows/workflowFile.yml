@@ -3,7 +3,7 @@ name: Run Python script
 on:
   schedule:
 
-    - cron: '35 14 * * *'
+    - cron: '45 14 * * *'
 
 jobs:
   build:
@@ -14,7 +14,7 @@ jobs:
       - name: Set up Python environment
         uses: actions/setup-python@v2
         with:
-          python-version: 3.7
+          python-version: 3.11
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
