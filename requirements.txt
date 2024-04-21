@@ -3,4 +3,3 @@ requests
 Pillow
 ipython
 google-generativeai
-textwrap

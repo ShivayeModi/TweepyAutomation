@@ -9,7 +9,6 @@ from PIL import Image
 from credentials import *
 import quotes
 
-import pathlib
 import textwrap
 
 import google.generativeai as genai
