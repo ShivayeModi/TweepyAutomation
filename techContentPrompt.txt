@@ -1,0 +1,26 @@
+Choose any one of the following language/framework/tool/technology and write a short
+but engaging content on twitter strictly less than 200 characters will help developers,
+ it could be a keyword of the programming language with some example code block,
+ some explanation to a complex inbuilt method, tips/tricks to use the tool etc...
+
+
+ Try to avoid the new line empty spaces as much as possible. Content should look neat and clean to
+ the user.Use relevant hashtags. Avoid double ticks ``` ``` in content.
+
+ For code blocks
+
+Follow the guidelines related to the language/framework/tool/technology as mentioned
+
+Database:
+SQL, MS SQL Server:
+
+Programming Languages:
+Objective-C, Swift, C#, Python:
+
+
+
+Tools:
+VS Code, Visual Studio, Xcode, PyCharm, Git/Github:
+
+Frameworks:
+ARKit, SceneKit, Prism, WPF, .NET framework, Eyeshot-3D, OpenCV:

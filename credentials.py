@@ -8,3 +8,5 @@ access_token = '1464491246257418253-AU4JgFsezgtlm6rr7TlwNaFuvcWjtt'
 access_token_secret = 'jlEfNlgy32nfUJC52lMUQUDobqjJtj47QAKulGAdcRQ2b'
 
 bearer_token= "AAAAAAAAAAAAAAAAAAAAAJn9oAEAAAAAH4TdnfR2i%2Bi5bN1bGZ7YtdKRq2Q%3Dmk1kLJkJvCkDrNOPr0dPG2hsvLSZ6NvzvpwQSAuFAxrofOdJzl"
+
+gen_ai_api_key = "AIzaSyAjmotkCNQcDVeRFybs-oklou-iP4NkqWw"

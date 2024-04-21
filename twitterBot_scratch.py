@@ -9,7 +9,24 @@ from PIL import Image
 from credentials import *
 import quotes
 
+import pathlib
+import textwrap
 
+import google.generativeai as genai
+
+from IPython.display import display
+from IPython.display import Markdown
+
+
+def to_markdown(text):
+  text = text.replace('•', '  *')
+  return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
+
+genai.configure(api_key=gen_ai_api_key)
+
+
+text_model = genai.GenerativeModel('gemini-pro')
+vision_model = genai.GenerativeModel('gemini-pro-vision')
 
 old_id = None
 # def checkForCorrectTime():
@@ -26,12 +43,18 @@ client = tweepy.Client(bearer_token,consumer_key,consumer_secret,access_token,ac
 auth = tweepy.OAuth1UserHandler(consumer_key,consumer_secret,access_token,access_token_secret)
 api = tweepy.API(auth)
 
+
+
 def postMeme():
   try:
     rand_num = random.randint(50 , 1500 )
     urlstring = "https://tg.i-c-a.su/media/programmerjokes/" + str(rand_num)
     json_response = requests.get(urlstring)
     meme_img_pil = Image.open(BytesIO(json_response.content))
+    prompt = "Write a half liner caption suitable for this image to be shown as a meme to GenZ audience.Add suitable emoji in the text where ever required "
+    response = vision_model.generate_content([prompt,meme_img_pil], stream=True)
+    response.resolve()
+
 
     # Save image in memory
     meme_img_bytes = BytesIO()
@@ -39,12 +62,21 @@ def postMeme():
     meme_img_bytes.seek(0)
 
     media = api.media_upload(filename="meme of the day",file=meme_img_bytes)
-    text = "#programming #techworld #dailymemes #coding #memer #techhumor #programmermemes"
+    sequenceString = "\n.\n.\n.\n.\n.\n.\n."
+    text = response.text + sequenceString + "\n#programminghumor #technology #100DaysOfCode"
     client.create_tweet(text=text,media_ids=[media.media_id_string])
-    # api.update_status("\*/",media_ids=[media.media_id_string])
+
   except Exception as e:
       print(e)
 
+
+def postTechPrepContent():
+    prompt = ""
+    with open("techContentPrompt.txt","r") as file:
+        prompt = file.read()
+
+    response = text_model.generate_content(prompt)
+    client.create_tweet(text=response.text)
 
 def performQueryAndReply(old_id=None):
 
@@ -90,13 +122,10 @@ def performQueryAndReply(old_id=None):
          print(exception)
          continue
 
-     # performQueryAndReply()
-
-
-
-
-
+# performQueryAndReply()
 postMeme()
+postTechPrepContent()
+
 #performQueryAndReply()
 
 # # Check if script has run successfully
