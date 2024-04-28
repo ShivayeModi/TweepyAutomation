@@ -3,7 +3,7 @@ name: Run Python script
 on:
   schedule:
 
-    - cron: '26 16 * * *'
+    - cron: '0 */8 * * *' # Runs every 8 hours
 
 jobs:
   build:
