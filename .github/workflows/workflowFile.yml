@@ -2,23 +2,41 @@ name: Run Python script
 
 on:
   schedule:
-
     - cron: '0 */8 * * *' # Runs every 8 hours
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
+
       - name: Set up Python environment
         uses: actions/setup-python@v2
         with:
           python-version: 3.11
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+
+      - name: Set up environment variables
+        run: |
+          echo "CONSUMER_KEY=${{ secrets.CONSUMER_KEY }}" >> $GITHUB_ENV
+          echo "CONSUMER_SECRET=${{ secrets.CONSUMER_SECRET }}" >> $GITHUB_ENV
+          echo "ACCESS_TOKEN=${{ secrets.ACCESS_TOKEN }}" >> $GITHUB_ENV
+          echo "ACCESS_TOKEN_SECRET=${{ secrets.ACCESS_TOKEN_SECRET }}" >> $GITHUB_ENV
+          echo "BEARER_TOKEN=${{ secrets.BEARER_TOKEN }}" >> $GITHUB_ENV
+          echo "GEN_AI_API_KEY=${{ secrets.GEN_AI_API_KEY }}" >> $GITHUB_ENV
+
       - name: Run Python script
         run: |
           python twitterBot_scratch.py
-
+        env:
+          CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
+          CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+          BEARER_TOKEN: ${{ secrets.BEARER_TOKEN }}
+          GEN_AI_API_KEY: ${{ secrets.GEN_AI_API_KEY }}
