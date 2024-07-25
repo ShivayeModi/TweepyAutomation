@@ -25,7 +25,7 @@ genai.configure(api_key=gen_ai_api_key)
 
 
 text_model = genai.GenerativeModel('gemini-pro')
-vision_model = genai.GenerativeModel('gemini-pro-vision')
+vision_model = genai.GenerativeModel('gemini-1.5-flash')
 
 old_id = None
 # def checkForCorrectTime():
