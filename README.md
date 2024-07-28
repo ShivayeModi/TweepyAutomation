@@ -27,7 +27,6 @@
         <li>Implements the functionality to extract random tech-meme images using JokeAPI.</li>
         <li>Posts the extracted meme images as tweets to add a humorous touch to the Twitter account.</li>
       </ul>
-      
     </li>
     <li>
       <h3>Scheduled Execution with GitHub Actions 🕒:</h3>
@@ -66,11 +65,17 @@
   </ul>
 
 <h2> Output Examples </h2>
-![Meme1](https://github.com/user-attachments/assets/7435858e-96ce-450c-8d32-7c9f8c27ccb0)
-![Meme2](https://github.com/user-attachments/assets/f95a90ee-feca-44e5-b028-040dcb90130f)
-![Info2](https://github.com/user-attachments/assets/4e03b755-b55c-4385-a478-582792136f0d)
-![Info1](https://github.com/user-attachments/assets/b6ab3abd-a366-4f8b-b087-683826c97b37)
-![Optional Text](../main/AssetsReadMe/Info1.png)
+
+![image](https://github.com/user-attachments/assets/8fcb3753-a88e-46d0-9dab-8d41709a4916) <br>
+
+
+
+![image](https://github.com/user-attachments/assets/2a3d1ee4-b05d-4b88-bca9-be24632c9a7f) <br>
+
+![Info2](https://github.com/user-attachments/assets/4e03b755-b55c-4385-a478-582792136f0d) <br>
+
+![image](https://github.com/user-attachments/assets/8d361020-6e49-43af-b7da-f47161843d2f)
+
 
 
 
