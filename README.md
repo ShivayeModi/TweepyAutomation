@@ -66,7 +66,7 @@
   </ul>
 
 <h2> Output Examples </h2>
-![Examples:](AssetsReadMe/Meme1.png)
+![Examples:](https://github.com/ShivayeModi/TweepyAutomation/blob/main/AssetsReadMe/Info1.png)
 
 
   <h2>How to Use</h2>
