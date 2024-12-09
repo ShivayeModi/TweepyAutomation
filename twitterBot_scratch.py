@@ -50,8 +50,7 @@ def postMeme():
     urlstring = "https://tg.i-c-a.su/media/programmerjokes/" + str(rand_num)
     json_response = requests.get(urlstring)
     meme_img_pil = Image.open(BytesIO(json_response.content))
-    prompt = "Write a half liner caption suitable for this image to be shown as a meme to GenZ audience.Add suitable emoji in the text where ever required.Just write the caption right away.
-    Please dont start like this: Here the half line ......"
+    prompt = "Write a half liner caption suitable for this image to be shown as a meme to GenZ audience.Add suitable emoji in the text where ever required.Just write the caption right away.Please dont start like this: Here the half line ......"
     response = vision_model.generate_content([prompt,meme_img_pil], stream=True)
     response.resolve()
 
